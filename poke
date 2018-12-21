@@ -1,0 +1,31 @@
+class Pokemon:
+    def __init__(self, name, health, attack, type):
+        self.Pokemonsname = name
+        self.Pokemonshealth = health
+        self.Pokemonsattack = attack
+        self.Pokemonstype = type
+    def showPokemon(self):
+        return self.Pokemonstype, self.Pokemonsname, self.Pokemonshealth, self.Pokemonsattack
+
+
+def PokemonArena(Pokemon1, Pokemon2):
+    round = 1
+    while Pokemon1.Pokemonshealth > 0 or Pokemon2.Pokemonshealth > 0:
+        Pokemon1.Pokemonshealth = Pokemon1.Pokemonshealth - Pokemon2.Pokemonsattack
+        Pokemon2.Pokemonshealth = Pokemon2.Pokemonshealth - Pokemon1.Pokemonsattack
+        print "Round : " + str(round) + "  " + Pokemon1.Pokemonsname + " vs " + Pokemon2.Pokemonsname
+        print Pokemon1.Pokemonsname + "  hit " + str(Pokemon1.Pokemonsattack) + "  damage"
+        print Pokemon2.Pokemonsname + " 's " + str(Pokemon2.Pokemonshealth) + " health left"
+        print Pokemon2.Pokemonsname + "  hit " + str(Pokemon2.Pokemonsattack) + "  damage"
+        print Pokemon1.Pokemonsname + " 's " + str(Pokemon1.Pokemonshealth) + " health left"
+        round += 1
+        if Pokemon1.Pokemonshealth <= 0:
+            print Pokemon2.Pokemonsname + " WINS!"
+            break
+        elif Pokemon2.Pokemonshealth <= 0:
+            print Pokemon1.Pokemonsname + " WINS!"
+            break
+
+
+Pokemon1 = Pokemon("Pikachu", 120, 60, 'Lightning')
+Pokemon2 = Pokemon("Squirtle", 220, 40, 'Water')
