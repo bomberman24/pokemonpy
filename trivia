@@ -1,0 +1,46 @@
+class User:
+    def __init__(self,name, balance, phone, is_disqualified):
+        self.name = name
+        self.balance = balance
+        self.phone = phone
+        self.is_disqualified = is_disqualified
+    def print_user_stats(self):
+        print self.name, self.balance, self.phone
+
+class Answer:
+    def __init__(self, text, answer_no, is_correct, num_answering_users):
+        self.text = text
+        self.answer_no = answer_no
+        self.is_correct = is_correct
+        self.num_answering_users = num_answering_users
+
+class Question:
+    def __init__(self, question_text, answers, correct_ans):
+        self.question_text = question_text
+        self.answers = answers
+        self.correct_ans = correct_ans
+
+class Menu:
+    def __init__(self, MenuItems_list, header):
+        self.MenuItems_list = MenuItems_list
+        self.header = header
+
+class MenuItems:
+    def __init__(self,text, number):
+        self.text = text
+        self.number = number
+
+class Game:
+    def __init__(self, Question_list, UserObj, admin_menu, prize):
+        self.Question_list = Question_list
+        self.UserObj = UserObj
+        self.admin_menu = admin_menu
+        self.prize = prize
+
+
+
+
+User1 = User('Ahmet', '2.3', '5577', False)
+User2 = User('Timur', '3.0', '4536', False)
+User3 = User('Betul', '5.2', '8300', False)
+
